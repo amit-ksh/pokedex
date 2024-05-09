@@ -1,0 +1,38 @@
+---
+import Background from '../components/Background.vue';
+import DetailsCard from '../components/DetailsCard.vue';
+import EvolutionChain from '../components/EvolutionChain.vue';
+import Header from '../components/Header.vue';
+import ImageCard from '../components/ImageCard.vue';
+import StatsCard from '../components/StatsCard.vue';
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Pokédex | Powered By Astro & Vue">
+	<main class="mb-24">
+		<div class="flex justify-center items-center gap-4 mt-4">
+		  <img src="/pokeball.png" alt="pokeball" width="40" height="40" />
+		  <h1 class="text-3xl font-bold text-center opacity-70">Pokédex</h1>
+		</div>
+	
+		<Header client:load />
+	
+		<div
+		  class="container flex flex-col md:flex-row gap-4 items-center px-8 mt-8 justify-between mx-auto max-w-5xl"
+		>
+		  <ImageCard client:load />
+		  <StatsCard client:load />
+		</div>
+	
+		<div
+		  class="container flex flex-col md:flex-row gap-4 items-center px-8 mt-4 justify-between mx-auto max-w-5xl"
+		>
+		  <DetailsCard client:load />
+		  <EvolutionChain client:load />
+		</div>
+	
+		<Background client:load />
+	  </main>
+</Layout>
+
+
